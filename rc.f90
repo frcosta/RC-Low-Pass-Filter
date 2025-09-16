@@ -9,7 +9,6 @@ program rc_filter
 
     real, parameter :: PI = 3.1415926535
     real :: fc, R, C
-    integer :: choice
     integer(c_int) :: k
 
     interface
