@@ -1,9 +1,10 @@
 ! RC Low Pass Filter Calc
 ! GNU Fortran (tdm64-1) 10.3.0 on Windows 10
-! Fabiano Costa Sep/09/2025
+! Fabiano Costa Sep/16/2025
 ! compile: gfortran rc.f90 getch.o -o rc 
 
 program rc_filter
+    use convert
     use iso_c_binding
     implicit none
 
@@ -43,7 +44,8 @@ program rc_filter
         write(*,'(2/, A)', advance="no") 'Enter fc(Hz), R(Ohms): '
         read (*,*) fc, R
         C = 1 / (2 * PI * fc * R)
-        write(*,'(/, A, E12.4, A, /)') 'C = ', C, ' Farads'
+        write(*,'(/, A)', advance="no" ) 'C = '
+        call shcap (C)
     case (52)
         write(*,'(2/, A, /)') 'Bye'  
     end select
