@@ -15,7 +15,6 @@ rc.exe: $(OBJ_LINK)
 	$(FC) $(FFLAGS) -c -o $@ $<
 
 clean:
-	del rc.o
-	del capdefs.o
-	del convert.mod
+	del *.o
+	del *.mod
 	del rc.exe

@@ -20,11 +20,12 @@ program rc_filter
     end interface
 
     write(*,'(/, A, /)') '=== RC Low Pass Filter Calc ==='
-    write(*,'(6X, A)') '1) fc? enter R and C'
-    write(*,'(6X, A)') '2) R? enter fc and C'
-    write(*,'(6X, A)') '3) C? enter fc and R'
-    write(*,'(6X, A)') '4) Quit'
-    write(*,'(/, A)', advance="no") 'Select your choice: '
+    write(*,'(3X, A)') '1) Calc FC (enter R and C)'
+    write(*,'(3X, A)') '2) Calc R  (enter FC and C)'
+    write(*,'(3X, A)') '3) Calc C  (enter FC and R)'
+    write(*,'(3X, A, /)') '4) Quit'
+    write(*,'(A)')   '==============================='
+    write(*,'(A)', advance="no") 'Select your choice: '
     k = getch()
     
     select case (k)
@@ -44,7 +45,7 @@ program rc_filter
         write(*,'(2/, A)', advance="no") 'Enter fc(Hz), R(Ohms): '
         read (*,*) fc, R
         C = 1 / (2 * PI * fc * R)
-        write(*,'(/, A)', advance="no" ) 'C = '
+        write(*,'(/, A, E12.4, A)', advance="no" ) 'C = ', C, " "
         call shcap (C)
     case (52)
         write(*,'(2/, A, /)') 'Bye'  
