@@ -19,7 +19,7 @@ program rc_filter
           integer(c_int) :: getch
         end function getch
     end interface
-    write(*,*) PI
+
     write(*,'(/, A, /)') '=== RC Low Pass Filter Calc ==='
     write(*,'(3X, A)') '1) Calc FC (enter R and C)'
     write(*,'(3X, A)') '2) Calc R  (enter FC and C)'
