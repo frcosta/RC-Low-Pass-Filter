@@ -1,5 +1,5 @@
 # RC-Low-Pass-Filter
-Calc for RC Low Pass filter using Fortran
+Calc for RC Low Pass filter
 
 RC Low Pass Filter Calc
 
