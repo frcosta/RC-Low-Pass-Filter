@@ -1,15 +1,16 @@
 ! RC Low Pass Filter Calc
-! GNU Fortran (tdm64-1) 10.3.0 on Windows 10
+! GNU Fortran (tdm64-1) 10.3.0 on Windows 11
 ! Fabiano Costa Sep/16/2025
-! compile: gfortran rc.f90 getch.o -o rc 
+! compile: make all
 
 program rc_filter
     use convert
     use iso_c_binding
     implicit none
+    integer, parameter :: dp=selected_real_kind(18,12)
 
-    real, parameter :: PI = 3.1415926535
-    real :: fc, R, C
+    real(kind=dp), parameter :: PI = 4*atan(1.0_dp)
+    real(kind=dp) :: fc, R, C
     integer(c_int) :: k
 
     interface
@@ -18,7 +19,7 @@ program rc_filter
           integer(c_int) :: getch
         end function getch
     end interface
-
+    write(*,*) PI
     write(*,'(/, A, /)') '=== RC Low Pass Filter Calc ==='
     write(*,'(3X, A)') '1) Calc FC (enter R and C)'
     write(*,'(3X, A)') '2) Calc R  (enter FC and C)'

@@ -4,8 +4,9 @@ module convert
     contains
 
     subroutine shcap ( valcap )
-        real, intent(in) :: valcap
-        real(8) :: valor_conv
+        integer, parameter :: dp=selected_real_kind(18,12)
+        real(kind=dp), intent(in) :: valcap
+        real(kind=dp) :: valor_conv
         character(3) :: sufixo
 
         if (valcap < 1e-9) then
