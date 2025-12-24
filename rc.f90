@@ -1,7 +1,6 @@
 ! RC Low Pass Filter Calc
-! GNU Fortran (tdm64-1) 10.3.0 on Windows 11
+! GNU Fortran (tdm64-1) 13.3.0 on Linux
 ! Fabiano Costa Sep/16/2025
-! compile: make all
 
 program rc_filter
     use convert
@@ -49,7 +48,7 @@ program rc_filter
         write(*,'(/, A, E12.4, A)', advance="no" ) 'C = ', C, " "
         call shcap (C)
     case (52)
-        write(*,'(2/, A, /)') 'Bye'  
+        write(*,'(2/, A, /)') 'Bye'
     end select
 
 end program rc_filter

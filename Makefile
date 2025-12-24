@@ -6,15 +6,15 @@ OBJ = $(SRC:.f90=.o)
 
 OBJ_LINK = $(OBJ) getch.o
 
-all: rc.exe
+all: rc
 
-rc.exe: $(OBJ_LINK)
+rc: $(OBJ_LINK)
 	$(FC) $(FFLAGS) -o $@ $^
 
 %.o: %.f90
 	$(FC) $(FFLAGS) -c -o $@ $<
 
 clean:
-	del *.o
-	del *.mod
-	del rc.exe
+	rm *.o
+	rm *.mod
+	rm rc
