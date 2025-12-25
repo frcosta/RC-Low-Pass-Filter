@@ -34,7 +34,7 @@ program rc_filter
         write(*,'(A)', advance="no") 'Enter R(Ohms), C(Farads): '
         read (*,*) R, C
         fc = 1 / (2 * PI * R * C)
-        write(*,'(/, A, F8.2, A, /)') 'fc = ', fc, ' Hz'
+        write(*,'(/, A, F12.2, A, /)') 'fc = ', fc, ' Hz'
     case (50)
         write(*,'(2/, A)') 'Use cientific notation for C (e.g. 100E-9 for 100nF)'
         write(*,'(A)', advance="no") 'Enter fc(Hz), C(Farads): '
